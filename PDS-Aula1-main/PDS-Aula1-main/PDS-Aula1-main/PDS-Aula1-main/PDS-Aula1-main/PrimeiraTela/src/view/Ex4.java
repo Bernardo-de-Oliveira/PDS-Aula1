@@ -43,6 +43,7 @@ public class Ex4 extends JFrame {
 	 * Create the frame.
 	 */
 	public Ex4() {
+		setTitle("Preço da gasolina");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -75,8 +76,8 @@ public class Ex4 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				float Preco, Reais;
-				Preco = Integer.valueOf(textpreco.getText());
-				Reais = Integer.valueOf(textreais.getText());
+				Preco = Float.valueOf(textpreco.getText());
+				Reais = Float.valueOf(textreais.getText());
 				Gasolina calculo = new Gasolina();
 				float Gas = calculo.CalcGasolina(Preco,Reais);
 				

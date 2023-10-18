@@ -43,6 +43,7 @@ public class Ex3 extends JFrame {
 	 * Create the frame.
 	 */
 	public Ex3() {
+		setTitle("Área e perímetro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -69,8 +70,8 @@ public class Ex3 extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				float altura, base;
-				altura = Integer.valueOf(textaltura.getText());
-				base = Integer.valueOf(textbase.getText());
+				altura = Float.valueOf(textaltura.getText());
+				base = Float.valueOf(textbase.getText());
 				Retangulo calculo = new Retangulo();
 				float Area = calculo.calculoA(altura, base);
 				float Perimetro = calculo.calculoP(altura, base);
