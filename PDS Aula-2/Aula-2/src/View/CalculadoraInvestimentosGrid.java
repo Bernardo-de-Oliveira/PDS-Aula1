@@ -122,11 +122,12 @@ public class CalculadoraInvestimentosGrid extends JFrame {
 				String DepDig = txtDeposito.getText();
 				String NumMDig = txtMeses.getText();
 				String JurosDig = txtJuros.getText();
-				float DepositoF = Float.valueOf(DepDig);
-				Integer MesesI = Integer.valueOf(NumMDig);
-				Integer JurosI = Integer.valueOf(JurosDig);
 				
-				Investimento puxar = new Investimento(JurosI, DepositoF, DepositoF);
+				int MesesI = Integer.valueOf(NumMDig);
+				double JurosD = Double.valueOf(JurosDig);
+				double DepositoD = Double.valueOf(DepDig);
+				
+				Investimento puxar = new Investimento(MesesI,JurosD,DepositoD);
 				
 				double calculo = puxar.calculaTotal();
 				
