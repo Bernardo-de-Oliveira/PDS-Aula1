@@ -5,31 +5,24 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Model.Investimento;
-
 import java.awt.GridLayout;
-import java.awt.Window;
-
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 
 public class CalculadoraInvestimentosGrid extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtDeposito;
-	private JTextField txtMeses;
-	private JTextField txtJuros;
+	private JTextField textField;
+	private JLabel lblNewLabel_1;
+	private JTextField textField_1;
+	private JLabel lblNewLabel_2;
+	private JTextField textField_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
+	private JLabel lblNewLabel_5;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -52,90 +45,45 @@ public class CalculadoraInvestimentosGrid extends JFrame {
 	 */
 	public CalculadoraInvestimentosGrid() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 426, 411);
-		
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-		
-		JMenu mnNewMenu = new JMenu("Ajuda");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Sobre");
-		mntmNewMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Sobre sobre = new Sobre();
-				sobre.setVisible(true);
-			}
-		});
-		mnNewMenu.add(mntmNewMenuItem);
+		setBounds(100, 100, 444, 311);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(5, 2, 0, 0));
+		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel lblDepositoMensal = new JLabel("Depósito mensal R$ :");
-		contentPane.add(lblDepositoMensal);
-		
-		JPanel panel = new JPanel();
-		contentPane.add(panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		txtDeposito = new JTextField();
-		panel.add(txtDeposito);
-		txtDeposito.setColumns(10);
-		
-		JLabel lblNumMeses = new JLabel("Num. de meses:");
-		contentPane.add(lblNumMeses);
-		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		txtMeses = new JTextField();
-		panel_1.add(txtMeses);
-		txtMeses.setColumns(10);
-		
-		JLabel lblJurosMes = new JLabel("Juros ao mês %:");
-		contentPane.add(lblJurosMes);
-		
-		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2);
-		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		txtJuros = new JTextField();
-		panel_2.add(txtJuros);
-		txtJuros.setColumns(10);
-		
-		JLabel lblNewLabel = new JLabel("Total Investido + juros R$:");
+		JLabel lblNewLabel = new JLabel("Deposito Mensal R$:");
 		contentPane.add(lblNewLabel);
 		
-		JPanel panel_3 = new JPanel();
-		contentPane.add(panel_3);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		textField = new JTextField();
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Calcular");
-		panel_3.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				String DepDig = txtDeposito.getText();
-				String NumMDig = txtMeses.getText();
-				String JurosDig = txtJuros.getText();
-				
-				int MesesI = Integer.valueOf(NumMDig);
-				double JurosD = Double.valueOf(JurosDig);
-				double DepositoD = Double.valueOf(DepDig);
-				
-				Investimento puxar = new Investimento(MesesI,JurosD,DepositoD);
-				
-				double calculo = puxar.calculaTotal();
-				
-				JOptionPane.showMessageDialog(null," O Resultado é " + calculo);
-				
-				
-			}
-		});
+		lblNewLabel_1 = new JLabel("Num. de meses:");
+		contentPane.add(lblNewLabel_1);
+		
+		textField_1 = new JTextField();
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		lblNewLabel_2 = new JLabel("Juros ao mês %:");
+		contentPane.add(lblNewLabel_2);
+		
+		textField_2 = new JTextField();
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		lblNewLabel_3 = new JLabel("Total investido + juros R$:");
+		contentPane.add(lblNewLabel_3);
+		
+		lblNewLabel_4 = new JLabel("");
+		contentPane.add(lblNewLabel_4);
+		
+		lblNewLabel_5 = new JLabel("");
+		contentPane.add(lblNewLabel_5);
+		
+		btnNewButton = new JButton("Calcular");
+		contentPane.add(btnNewButton);
 	}
 
 }
